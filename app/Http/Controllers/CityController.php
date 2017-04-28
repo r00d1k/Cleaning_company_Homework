@@ -12,7 +12,7 @@ use App\Models\City,
     Illuminate\Http\Request,
     Session;
 
-class SityController
+class CityController
 {
     public function index()
     {

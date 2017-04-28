@@ -24,4 +24,4 @@ Route::get('/', function () {
 Route::resource('customer', 'CustomerController');
 Route::resource('booking', 'BookingController');
 Route::resource('cleaner', 'CleanerController');
-Route::resource('city', 'SityController');
+Route::resource('city', 'CityController');
