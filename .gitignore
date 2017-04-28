@@ -5,3 +5,8 @@
 Homestead.json
 Homestead.yaml
 #.env
+.vagrant
+provision
+Vagrantfile
+nginx-access.log
+nginx-error.log
