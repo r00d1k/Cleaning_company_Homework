@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Booking;
+use App\Models\Booking;
 use Illuminate\Http\Request;
 use Session;
 

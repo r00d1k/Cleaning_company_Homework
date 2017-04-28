@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Cleaner;
+use App\Models\Cleaner;
 use Illuminate\Http\Request;
 use Session;
 
