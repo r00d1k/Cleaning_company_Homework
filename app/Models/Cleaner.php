@@ -31,4 +31,7 @@ class Cleaner extends Model
     {
         return $this->belongsToMany('App\Models\City', 'cleaner_in_cities', 'cleaner_id', 'city_id');
     }
+    public function bookings() {
+        return $this->hasMany('App\Models\Booking');
+    }
 }
