@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-
+use App\Http\Requests\CustomerRequest;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 use Session;
@@ -40,7 +38,7 @@ class CustomerController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function store(Request $request)
+    public function store(CustomerRequest $request)
     {
         
         $requestData = $request->all();
@@ -88,7 +86,7 @@ class CustomerController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function update($id, Request $request)
+    public function update($id, CustomerRequest $request)
     {
         
         $requestData = $request->all();

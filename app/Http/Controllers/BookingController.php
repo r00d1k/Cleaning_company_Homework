@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-
+use App\Http\Requests\BookingRequest;
 use App\Models\Booking;
-use Illuminate\Http\Request;
 use Session;
 
 class BookingController extends Controller
@@ -40,7 +37,7 @@ class BookingController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function store(Request $request)
+    public function store(BookingRequest $request)
     {
         
         $requestData = $request->all();
@@ -88,7 +85,7 @@ class BookingController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function update($id, Request $request)
+    public function update($id, BookingRequest $request)
     {
         
         $requestData = $request->all();

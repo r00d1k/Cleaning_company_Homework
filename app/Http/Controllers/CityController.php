@@ -9,8 +9,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\City,
-    Illuminate\Http\Request,
-    Session;
+    Session,
+    App\Http\Requests\CityRequest;
 
 class CityController
 {
@@ -25,7 +25,7 @@ class CityController
         return view('city.create');
     }
 
-    public function store(Request $request)
+    public function store(CityRequest $request)
     {
         $requestData = $request->all();
         City::create($requestData);
@@ -45,7 +45,7 @@ class CityController
         return view('city.edit', compact('city'));
     }
 
-    public function update($id, Request $request)
+    public function update($id, CityRequest $request)
     {
         $requestData = $request->all();
         $city = City::findOrFail($id);
