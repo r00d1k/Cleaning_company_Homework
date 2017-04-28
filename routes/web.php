@@ -29,5 +29,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::post('/new_booking', 'HomeController@newBooking');
+Route::post('/new_booking', 'NewBooking@Create');
 
