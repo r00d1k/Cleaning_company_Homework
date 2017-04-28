@@ -8,11 +8,25 @@
 
     {!! Form::open(['url' => '/booking', 'class' => 'form-horizontal', 'files' => true]) !!}
 
-                    <div class="form-group {{ $errors->has('date') ? 'has-error' : ''}}">
+            <div class="form-group {{ $errors->has('date') ? 'has-error' : ''}}">
                 {!! Form::label('date', 'Date', ['class' => 'col-sm-3 control-label']) !!}
                 <div class="col-sm-6">
                     {!! Form::date('date', null, ['class' => 'form-control']) !!}
                     {!! $errors->first('date', '<p class="help-block">:message</p>') !!}
+                </div>
+            </div>
+            <div class="form-group {{ $errors->has('date') ? 'has-error' : ''}}">
+                {!! Form::label('time', 'Time', ['class' => 'col-sm-3 control-label']) !!}
+                <div class="col-sm-6">
+                    {!! Form::time('time', null, ['class' => 'form-control']) !!}
+                    {!! $errors->first('time', '<p class="help-block">:message</p>') !!}
+                </div>
+            </div>
+            <div class="form-group {{ $errors->has('chours') ? 'has-error' : ''}}">
+                {!! Form::label('chours', 'Count of hours', ['class' => 'col-sm-3 control-label']) !!}
+                <div class="col-sm-6">
+                    {!! Form::number('chours', null, ['class' => 'form-control']) !!}
+                    {!! $errors->first('chours', '<p class="help-block">:message</p>') !!}
                 </div>
             </div>
             <div class="form-group {{ $errors->has('customer_id') ? 'has-error' : ''}}">

@@ -30,6 +30,13 @@
                 {!! $errors->first('city', '<p class="help-block">:message</p>') !!}
             </div>
         </div>
+        <div class="form-group {{ $errors->has('date') ? 'has-error' : ''}}">
+            {!! Form::label('date', 'Date', ['class' => 'col-sm-3 control-label']) !!}
+            <div class="col-sm-6">
+                {!! Form::date('date', null, ['class' => 'form-control']) !!}
+                {!! $errors->first('date', '<p class="help-block">:message</p>') !!}
+            </div>
+        </div>
 
 
     {!! Form::close() !!}

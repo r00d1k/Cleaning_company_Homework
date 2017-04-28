@@ -24,7 +24,9 @@ class BookingRequest extends FormRequest
     public function rules()
     {
         return [
-            'date' => 'required|date',
+            'date' => 'required|date|after:yesterday',
+            'time' => 'required',
+            'chours' => 'required|integer',
             'customer_id' => 'required|exists:customers,id',
             'cleaner_id' => 'required|exists:cleaners,id',
         ];

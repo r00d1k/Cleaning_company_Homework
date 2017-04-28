@@ -24,7 +24,11 @@
                 <tr>
                     <th>ID</th><td>{{ $booking->id }}</td>
                 </tr>
-                <tr><th> Date </th><td> {{ $booking->date }} </td></tr><tr><th> Customer Id </th><td> {{ $booking->customer_id }} </td></tr><tr><th> Cleaner Id </th><td> {{ $booking->cleaner_id }} </td></tr>
+                <tr><th> Date </th><td> {{ $booking->date }} </td></tr>
+                <tr><th> Time </th><td> {{ $booking->time }} </td></tr>
+                <tr><th> Hours </th><td> {{ $booking->chours }} </td></tr>
+                <tr><th> Customer Id </th><td> {{ $booking->customer_id }} </td></tr>
+                <tr><th> Cleaner Id </th><td> {{ $booking->cleaner_id }} </td></tr>
             </tbody>
         </table>
     </div>
