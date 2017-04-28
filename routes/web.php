@@ -28,3 +28,6 @@ Route::resource('city', 'CityController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::post('/new_booking', 'HomeController@newBooking');
+

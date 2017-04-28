@@ -37,7 +37,33 @@
                 {!! $errors->first('date', '<p class="help-block">:message</p>') !!}
             </div>
         </div>
-
+        <div class="form-group {{ $errors->has('date') ? 'has-error' : ''}}">
+            {!! Form::label('time', 'Time', ['class' => 'col-sm-3 control-label']) !!}
+            <div class="col-sm-6">
+                {!! Form::time('time', null, ['class' => 'form-control']) !!}
+                {!! $errors->first('time', '<p class="help-block">:message</p>') !!}
+            </div>
+        </div>
+        <div class="form-group {{ $errors->has('chours') ? 'has-error' : ''}}">
+            {!! Form::label('chours', 'Count of hours', ['class' => 'col-sm-3 control-label']) !!}
+            <div class="col-sm-6">
+                {!! Form::number('chours', null, ['class' => 'form-control']) !!}
+                {!! $errors->first('chours', '<p class="help-block">:message</p>') !!}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-3">
+                {!! Form::submit('Book', ['class' => 'btn btn-primary form-control']) !!}
+            </div>
+        </div>
 
     {!! Form::close() !!}
+
+    @if ($errors->any())
+        <ul class="alert alert-danger">
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    @endif
 @endsection

@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class CustomerRequest extends FormRequest
 {
@@ -13,7 +14,7 @@ class CustomerRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return !Auth::guest();
     }
 
     /**
@@ -26,7 +27,7 @@ class CustomerRequest extends FormRequest
         return [
             'first_name' => 'required',
             'last_name' => 'required',
-            'phone_number' => 'required',
+            'phone_number' => 'required|unique:customers,phone_number',
         ];
     }
 }
