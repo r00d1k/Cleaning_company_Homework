@@ -27,5 +27,8 @@ class Cleaner extends Model
      */
     protected $fillable = ['first_name', 'last_name', 'quality_score'];
 
-    
+    public function cities()
+    {
+        return $this->belongsToMany('App\Models\City', 'cleaner_in_cities', 'cleaner_id', 'city_id');
+    }
 }

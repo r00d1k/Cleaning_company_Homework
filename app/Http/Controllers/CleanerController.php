@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CleanerInCities;
 use App\Http\Requests\CleanerRequest;
 use App\Models\Cleaner;
+use App\Models\City;
 use Session;
 
 class CleanerController extends Controller
@@ -59,8 +61,9 @@ class CleanerController extends Controller
     public function show($id)
     {
         $cleaner = Cleaner::findOrFail($id);
+        $cities = City::All();
 
-        return view('cleaner.show', compact('cleaner'));
+        return view('cleaner.show', compact(['cleaner', 'cities']));
     }
 
     /**
@@ -73,8 +76,8 @@ class CleanerController extends Controller
     public function edit($id)
     {
         $cleaner = Cleaner::findOrFail($id);
-
-        return view('cleaner.edit', compact('cleaner'));
+        $cities = City::All();
+        return view('cleaner.edit', compact(['cleaner', 'cities']));
     }
 
     /**
@@ -89,9 +92,21 @@ class CleanerController extends Controller
     {
         
         $requestData = $request->all();
-        
+
         $cleaner = Cleaner::findOrFail($id);
         $cleaner->update($requestData);
+        foreach ($cleaner->cities as $city) {
+            if ($key = array_search($city->id, $requestData['cities'])) {
+                unset($requestData['cities'][$key]);
+            } else {
+                $cleaner->cities()->detach($city->id);
+            }
+
+        }
+        foreach ($requestData['cities'] as $city) {
+
+            $cleaner->cities()->attach($city);
+        }
 
         Session::flash('flash_message', 'Cleaner updated!');
 

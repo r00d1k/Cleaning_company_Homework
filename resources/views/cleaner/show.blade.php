@@ -28,6 +28,15 @@
             </tbody>
         </table>
     </div>
-
+    <table class="table table-bordered table-striped table-hover">
+        <tbody>
+        <tr>
+            <th>Cities</th>
+        </tr>
+        @foreach($cleaner->cities as $city)
+        <tr><td>{{$city->city}}</td></tr>
+        @endforeach
+        </tbody>
+    </table>
 </div>
 @endsection
