@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Sity;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +13,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $sity = Sity::paginate(25);
+    $data = [];
+    foreach ($sity as $item) {
+        $data[$item->id] = $item->sity;
+    }
+    return view('welcome', ['sity' => $data]);
 });
 
 Route::resource('customer', 'CustomerController');

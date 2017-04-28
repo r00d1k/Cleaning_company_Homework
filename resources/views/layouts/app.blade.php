@@ -38,7 +38,7 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/booking') }}">
+                <a class="navbar-brand" href="{{ url('/') }}">
                     Homework
                 </a>
             </div>
