@@ -27,6 +27,7 @@ class CleanerRequest extends FormRequest
             'first_name' => 'required',
             'last_name' => 'required',
             'quality_score' => 'required|integer|between:0,5',
+            'cities' => 'array',
         ];
     }
 }
