@@ -24,10 +24,10 @@
             </div>
         </div>
         <div class="form-group {{ $errors->has('phone_number') ? 'has-error' : ''}}">
-            {!! Form::label('sity', 'Sity', ['class' => 'col-sm-3 control-label']) !!}
+            {!! Form::label('city', 'City', ['class' => 'col-sm-3 control-label']) !!}
             <div class="col-sm-6">
-                {!! Form::select('sity', $sity, null, ['class' => 'form-control']) !!}
-                {!! $errors->first('sity', '<p class="help-block">:message</p>') !!}
+                {!! Form::select('city', $city, null, ['class' => 'form-control']) !!}
+                {!! $errors->first('city', '<p class="help-block">:message</p>') !!}
             </div>
         </div>
 

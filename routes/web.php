@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Sity;
+use App\Models\City;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,15 +13,15 @@ use App\Models\Sity;
 */
 
 Route::get('/', function () {
-    $sity = Sity::paginate(25);
+    $city = City::paginate(25);
     $data = [];
-    foreach ($sity as $item) {
-        $data[$item->id] = $item->sity;
+    foreach ($city as $item) {
+        $data[$item->id] = $item->city;
     }
-    return view('welcome', ['sity' => $data]);
+    return view('welcome', ['city' => $data]);
 });
 
 Route::resource('customer', 'CustomerController');
 Route::resource('booking', 'BookingController');
 Route::resource('cleaner', 'CleanerController');
-Route::resource('sity', 'SityController');
+Route::resource('city', 'SityController');

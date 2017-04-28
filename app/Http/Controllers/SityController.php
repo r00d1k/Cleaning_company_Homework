@@ -8,7 +8,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Sity,
+use App\Models\City,
     Illuminate\Http\Request,
     Session;
 
@@ -16,48 +16,48 @@ class SityController
 {
     public function index()
     {
-        $sity = Sity::paginate(25);
-        return view('sity.index', ['sity' => Sity::paginate(25)]);
+        $city = City::paginate(25);
+        return view('city.index', ['city' => City::paginate(25)]);
     }
 
     public function create()
     {
-        return view('sity.create');
+        return view('city.create');
     }
 
     public function store(Request $request)
     {
         $requestData = $request->all();
-        Sity::create($requestData);
-        Session::flash('flash_message', 'Sity added!');
-        return redirect('sity');
+        City::create($requestData);
+        Session::flash('flash_message', 'City added!');
+        return redirect('city');
     }
 
     public function show($id)
     {
-        $sity = Sity::findOrFail($id);
-        return view('sity.show', compact('sity'));
+        $city = City::findOrFail($id);
+        return view('city.show', compact('city'));
     }
 
     public function edit($id)
     {
-        $sity = Sity::findOrFail($id);
-        return view('sity.edit', compact('sity'));
+        $city = City::findOrFail($id);
+        return view('city.edit', compact('city'));
     }
 
     public function update($id, Request $request)
     {
         $requestData = $request->all();
-        $sity = Sity::findOrFail($id);
-        $sity->update($requestData);
-        Session::flash('flash_message', 'Sity updated!');
-        return redirect('sity');
+        $city = City::findOrFail($id);
+        $city->update($requestData);
+        Session::flash('flash_message', 'City updated!');
+        return redirect('city');
     }
 
     public function destroy($id)
     {
-        Sity::destroy($id);
-        Session::flash('flash_message', 'Sity deleted!');
-        return redirect('sity');
+        City::destroy($id);
+        Session::flash('flash_message', 'City deleted!');
+        return redirect('city');
     }
 }

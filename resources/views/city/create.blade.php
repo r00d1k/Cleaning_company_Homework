@@ -3,15 +3,15 @@
 @section('content')
 <div class="container">
 
-    <h1>Create New Sity</h1>
+    <h1>Create New City</h1>
     <hr/>
 
-    {!! Form::open(['url' => '/sity', 'class' => 'form-horizontal', 'files' => true]) !!}
+    {!! Form::open(['url' => '/city', 'class' => 'form-horizontal', 'files' => true]) !!}
         <div class="form-group {{ $errors->has('first_name') ? 'has-error' : ''}}">
-            {!! Form::label('sity', 'Sity', ['class' => 'col-sm-3 control-label']) !!}
+            {!! Form::label('city', 'City', ['class' => 'col-sm-3 control-label']) !!}
             <div class="col-sm-6">
-                {!! Form::text('sity', null, ['class' => 'form-control']) !!}
-                {!! $errors->first('sity', '<p class="help-block">:message</p>') !!}
+                {!! Form::text('city', null, ['class' => 'form-control']) !!}
+                {!! $errors->first('city', '<p class="help-block">:message</p>') !!}
             </div>
         </div>
         <div class="form-group">

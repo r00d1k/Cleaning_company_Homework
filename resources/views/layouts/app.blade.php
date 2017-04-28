@@ -49,7 +49,7 @@
                     <li><a href="{{ url('/booking') }}">Booking</a></li>
                     <li><a href="{{ url('/customer') }}">Customers</a></li>
                     <li><a href="{{ url('/cleaner') }}">Cleaners</a></li>
-                    <li><a href="{{ url('/sity') }}">Sities</a></li>
+                    <li><a href="{{ url('/city') }}">Cities</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
